@@ -7,5 +7,17 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = React.useState("a");
   const [cocktails, setCocktails] = React.useState([]);
 
-  return <h1>home page</h1>;
+  React.useEffect(() => {
+    fetch("https://ww.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+      .then((response) => {
+        response.json();
+      })
+      .then((data) => console.log(data));
+  }, []);
+  return (
+    <main>
+      <SearchForm setSearchTerm={setSearchTerm} />
+      <CocktailList loading={loading} cocktails={cocktails} />
+    </main>
+  );
 }
