@@ -21,7 +21,7 @@ function App() {
   <SingleCocktail/>
 </Route>
 <Route path = '*'>
-<Error/>
+  <Error/>
 </Route>
 </Switch>
 </Router>
