@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default function Home() {
   const [loading, setLoading] = React.useState(false);
-  const [searchTerm, setSearchTerm] = React.useState('margarita');
+  const [searchTerm, setSearchTerm] = React.useState('aasfsdg');
   const [cocktails, setCocktails] = React.useState([]);
 
   React.useEffect(() => {
@@ -25,6 +25,7 @@ export default function Home() {
         console.log(error);
       }
     }
+    getDrinks();
   }, [searchTerm]);
   return (
     <main>
