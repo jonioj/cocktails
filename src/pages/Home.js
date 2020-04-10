@@ -1,6 +1,7 @@
 import React from 'react';
 import CocktailList from '../components/CocktailList';
 import SearchForm from '../components/SearchForm';
+import axios from 'axios';
 
 export default function Home() {
   const [loading, setLoading] = React.useState(false);
@@ -9,7 +10,7 @@ export default function Home() {
 
   React.useEffect(() => {
     fetch(
-      'https://ww.thecocktaildb.com/api/json/v1/1/search.php?s=margarita',
+      'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita',
     )
       .then((response) => response.json())
       .then((data) => console.log(data));
